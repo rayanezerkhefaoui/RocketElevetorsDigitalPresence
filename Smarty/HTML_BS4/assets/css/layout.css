@@ -408,7 +408,7 @@ label {
 section .input-group-btn .btn.btn-default,
 section .input-group-btn button.btn-default {
 	border-width:2px;
-	border-color:#ddd;
+	border-color:rgb(233, 9, 9);
 }
 .form-control:focus {
 	border-color:#c6c6c6;

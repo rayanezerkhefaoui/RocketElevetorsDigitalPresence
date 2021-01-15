@@ -280,7 +280,7 @@ body.menu-vertical #mainMenu.sidebar-vertical .sidebar-nav .navbar li:hover>a {
 /**	[Shortcode] Buttons
 *************************************************** **/
 section.dark .btn-default:hover {
-	color: #1b02fa;
+	color: #fa0202;
 	background-color:rgba(0,0,0,0.3);
 }
 
