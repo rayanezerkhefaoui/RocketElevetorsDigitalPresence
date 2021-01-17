@@ -226,7 +226,7 @@ pre {
     margin: 0 0 10px;
     font-size: 13px;
     line-height: 1.42857143;
-    color: #333;
+    color: rgb(255, 0, 0);
     word-break: break-all;
     word-wrap: break-word;
     background-color: #f8f9fa;
@@ -329,19 +329,19 @@ h6 > span {
 /**	03. Placeholder
 *************************************************** **/
 ::-webkit-input-placeholder { 	/* WebKit browsers */
-	color: #999;
+	color: rgb(17, 0, 255);
 }
 
 :-moz-placeholder { 				/* Mozilla Firefox 4 to 18 */
-	color: #999;
+	color: rgb(17, 0, 255);
 }
 
 ::-moz-placeholder { 			/* Mozilla Firefox 19+ */
-	color: #999;
+	color: rgb(17, 0, 255);
 }
 
 :-ms-input-placeholder {			/* Internet Explorer 10+ */
-	color: #999;
+	color: rgb(17, 0, 255);
 }
 
 

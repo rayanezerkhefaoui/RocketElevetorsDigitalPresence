@@ -226,7 +226,7 @@
 	section.theme-color div.heading-title.heading-dotted h4,
 	section.theme-color div.heading-title.heading-dotted h5,
 	section.theme-color div.heading-title.heading-dotted h6 {
-		color:#fff;
+		color:rgb(32, 32, 32);
 		background-color: #A94545;
 	}
 	section.theme-color div.heading-title h1, 
