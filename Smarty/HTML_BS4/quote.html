@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Residential Elevators</title>
+		<title>Rocket Elevators</title>
 		<meta name="description" content="" />
 		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
 
@@ -76,7 +76,7 @@
 
 				Example Usage:  class="clearfix sticky header-sm transparent b-0"
 			-->
-			<div id="header" class="navbar-toggleable-md sticky clearfix">
+			<div id="header" class="navbar-toggleable-md sticky transparent clearfix">
 
 				<!-- TOP NAV -->
 				<header id="topNav">
@@ -89,6 +89,7 @@
 
 						<!-- Logo -->
 						<a class="logo float-left" href="index.html">
+							<img src="assets/R2.png" alt="" />
 							<img src="assets/R2.png" alt="" />
 						</a>
 
@@ -153,48 +154,18 @@
 
 
 			<!-- HOME -->
-			<section id="home" class="h-450" style="background:url('assets/residentialpage.jpg')">
+			<section id="slider" class="h-650" style="background:url('demo_files/images/1200x800/18-min.jpg')">
+				<div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
+
 				<div class="display-table">
 					<div class="display-table-cell vertical-align-middle">
 						
 						<div class="container text-center">
 							
-							<div class="tp-caption font-roboto skewfromleft tp-resizeme"
-		data-x="50"
-		data-y="100" 
-		data-speed="500"
-		data-start="1500"
-		data-easing="Cubic.easeOut"
-		data-splitin="none"
-		data-splitout="none"
-		data-elementdelay="0.1"
-		data-endelementdelay="0.1"
-		data-endspeed="500"
-		style="z-index: 2; color:rgb(16, 4, 179); font-size:65px; line-height:85px; font-weight:bold; letter-spacing:0; text-shadow:none;">
-		Residential Elevators <br />
-		
-	</div>
-	<div class="tp-caption skewfromrightshort tp-resizeme"
-	data-x="50"
-	data-y="300" 
-	data-speed="500"
-	data-start="1000"
-	data-easing="easeInCirc"
-	data-splitin="none"
-	data-splitout="none"
-	data-elementdelay="0.1"
-	data-endelementdelay="0.1"
-	data-endspeed="500"
-	style="z-index: 3; font-size:24px; color:rgb(16, 4, 179); font-weight:300; text-shadow:none;">
-	Rocket Elevators offer a range of unique and compact residential elevators which can be installed virtually anywhere in a Canadian home. The first step is looking into how many apartment, floors and basements are in the building. We then offer the Standard, Premium or Excelium Elevators. Each coming in with a different service and installation fee. <br />
-	Make sure to get a quote quick!
-</div>
+							<h1 class="m-0 fs-50 fw-300 wow fadeInUp" data-wow-delay="0.4s">Please Fill Quote Form</Form></h1>
+							<p class="lead font-lato fs-30 wow fadeInUp" data-wow-delay="0.7s">For an accurate estimate of your project.</p>
 							
-							<div class="mt-30">
-								<a href="index.html" class="btn btn-3d btn-lg btn-teal"><i class="glyphicon glyphicon-th-large"></i>Go Back</a>
-								<span class="fs-17 hidden-xs-down">&nbsp; OR &nbsp;</span>
-								<a href="#" class="btn btn-3d btn-lg btn-red"><i class="glyphicon glyphicon-user"></i>Get A Quote</a>
-							</div>
+							
 
 						</div>
 
@@ -203,50 +174,79 @@
 			</section>
 			<!-- /HOME -->
 
-			<!-- Services -->
-			<section id="services">
-				<div class="container">
 
-					<div class="row">
-						<div class="col-sm-4">
-							<a class="image-hover lightbox" href="https://vimeo.com/ondemand/buildingwithawareness/108669033" data-plugin-options='{"type":"iframe"}'>
-								<span class="image-hover-icon image-hover-dark"><!-- image-hover-light | image-hover-dark -->
-									<i class="fa fa-vimeo-square"><!-- video icon --></i>
-								</span>
-								<img class="img-fluid" src="assets/AdobeStock_53477661.jpeg" alt="img" />
-							</a>
+			<!-- QUOTE FORM-->
 
-							<h3 class="mt-10">Numerous Awards And Major Projects</h3>
-							<p>The company has won numerous awards and participated in many major projects. Make sure you go look through our portfolio section!
-								</p>
-							<a href="index-onepage-construction.html" class="btn btn-default">OUR PORTFOLIO</a>
-						</div>
+			<form action="" id="building type" onsubmit="return false;">
+				<label for="Buildings">	Choose a building type:</form>
+					<select name="building" id="Building">
+						<option value="residential">Residential</option>
+						<option value="corporate">Corporate</option>
+						<option value="commercial">Commercial</option>
+						<option value="hybrid">Hybrid</option>
+					</select>
 
-						<div class="col-sm-4">
-							<a class="image-hover lightbox" href="https://www.youtube.com/watch?v=ZhCyoDlltbo" data-plugin-options='{"type":"iframe"}'>
-								<span class="image-hover-icon image-hover-dark"><!-- image-hover-light | image-hover-dark -->
-									<i class="fa fa-youtube-square"><!-- video icon --></i>
-								</span>
-								<img class="img-fluid" src="assets/AdobeStock_73868131.jpeg" alt="img" />
-							</a>
-							<h3 class="mt-10">Residential Buildings</h3>
-							<p>The company offers a service for residential buildings and offers a link to the page that details this service.</p>
-							<a href="index-landing-1.html" class="btn btn-default">READ MORE</a>
-						</div>
+			<form action="residential">
+				<label for="residential">Number of appartment in the building</label><br>
+				<input type="text" id="number-of-appartments" name="number-of-appartments" value=""><br>
+				<label for="residential">Number of floors in the building</label><br>
+				<input type="text" id="number-of-floors" name="number-of-floors" value=""><br>
+				<label for="residential">Number of basements in the building</label><br>
+				<input type="text" id="number-of-basements" name="number-of-basements" value=""><br>
+				<input type="submit" value="Submit">
+  				<input type="reset">
+			</form>	
+			<form action="commercial">
+				<label for="commercial">The number of distinct businesses</label><br>
+				<input type="text" id="number-of-companies" name="number-of-companies" value=""><br>
+				<label for="commercial">The number of floors</label><br>
+				<input type="text" id="number-of-floors" name="number-of-floors" value=""><br>
+				<label for="commercial">The number of basements</label><br>
+				<input type="text" id="number-of-basements" name="number-of-basements" value=""><br>
+				<label for="commercial">The number of parking spots</label><br>
+				<input type="text" id="number-of-parking-spots" name="number-of-parking-spots" value=""><br>
+				<label for="commercial">The number of elevators</label><br>
+				<input type="text" id="number-of-elevators" name="number-of-elevators" value=""><br>
+				<input type="submit" value="Submit">
+  				<input type="reset">
+			</form>	
+			<form action="corporate">
+				<label for="corporate">The number of occupants per floor</label><br>
+				<input type="text" id="maximum-occupancy" name="maximum-occupancy" value=""><br>
+				<label for="corporate">The number of floors</label><br>
+				<input type="text" id="number-of-floors" name="number-of-floors" value=""><br>
+				<label for="corporate">The number of basements</label><br>
+				<input type="text" id="number-of-basements" name="number-of-basements" value=""><br>
+				<label for="corporate">The number of parking spots</label><br>
+				<input type="text" id="number-of-parking-spots" name="number-of-parking-spots" value=""><br>
+				<label for="corporate">The number of corporations</label><br>
+				<input type="text" id="number-of-corporations" name="number-of-corporations" value=""><br>
+				<input type="submit" value="Submit">
+  				<input type="reset">
+			</form>
+			<form action="hybrid">
+				<label for="hybrid">The number of distinct businesses</label><br>
+				<input type="text" id="number-of-companies" name="number-of-companies" value=""><br>
+				<label for="hybrid">The number of floors</label><br>
+				<input type="text" id="number-of-floors" name="number-of-floors" value=""><br>
+				<label for="hybrid">The number of basements</label><br>
+				<input type="text" id="number-of-basements" name="number-of-basements" value=""><br>
+				<label for="hybrid">The number of parking spots</label><br>
+				<input type="text" id="number-of-parking-spots" name="number-of-parking-spots" value=""><br>
+				<label for="hybrid">The number of occupants per floor</label><br>
+				<input type="text" id="maximum-occupancy" name="maximum-occupancy" value=""><br>
+				<label for="hybrid">The number of hours of activity of the building</label><br>
+				<input type="text" id="business-hours" name="business-hours" value=""><br>
+				<input type="submit" value="Submit">
+  				<input type="reset">
+			</form>	
 
-						<div class="col-sm-4">
-							<img class="img-fluid" src="assets/AdobeStock_78149317.jpeg" alt="img" />
-							<h3 class="mt-10">Corporate Buildings</h3>
-							<p>The company also offers a service for corporate buildings and offers a link to the page that details this service
-								.</p>
-							<a href="index-landing-2.html" class="btn btn-default">READ MORE</a>
-						</div>
 
-					</div>
 
-				</div>
-			</section>
-			<!-- /Services -->
+			</form>
+					
+			 
+
 
 			<!-- FOOTER -->
 			<footer id="footer">
@@ -305,6 +305,7 @@
 						&copy; All Rights Reserved, Company LTD
 					</div>
 				</div>
+
 			</footer>
 			<!-- /FOOTER -->
 
