@@ -177,73 +177,75 @@
 
 			<!-- QUOTE FORM-->
 
-			<form action="" id="building type" onsubmit="return false;">
-				<label for="Buildings">	Choose a building type:</form>
-					<select name="building" id="Building">
-						<option value="residential">Residential</option>
-						<option value="corporate">Corporate</option>
-						<option value="commercial">Commercial</option>
-						<option value="hybrid">Hybrid</option>
-					</select>
+			<div style="float: left">Building Type: <select id="building" onChange="calc()">
+				<option value="residential">Residential</option>
+				<option value="corporate">Corporate</option>
+				<option value="commercial">Commercial</option>
+				<option value="hybrid">Hybrid</option>
+			  </select>
+			  </div>
 
-			<form action="residential">
-				<label for="residential">Number of appartment in the building</label><br>
-				<input type="text" id="number-of-appartments" name="number-of-appartments" value=""><br>
-				<label for="residential">Number of floors in the building</label><br>
-				<input type="text" id="number-of-floors" name="number-of-floors" value=""><br>
-				<label for="residential">Number of basements in the building</label><br>
-				<input type="text" id="number-of-basements" name="number-of-basements" value=""><br>
-				<input type="submit" value="Submit">
-  				<input type="reset">
-			</form>	
-			<form action="commercial">
-				<label for="commercial">The number of distinct businesses</label><br>
-				<input type="text" id="number-of-companies" name="number-of-companies" value=""><br>
-				<label for="commercial">The number of floors</label><br>
-				<input type="text" id="number-of-floors" name="number-of-floors" value=""><br>
-				<label for="commercial">The number of basements</label><br>
-				<input type="text" id="number-of-basements" name="number-of-basements" value=""><br>
-				<label for="commercial">The number of parking spots</label><br>
-				<input type="text" id="number-of-parking-spots" name="number-of-parking-spots" value=""><br>
-				<label for="commercial">The number of elevators</label><br>
-				<input type="text" id="number-of-elevators" name="number-of-elevators" value=""><br>
-				<input type="submit" value="Submit">
-  				<input type="reset">
-			</form>	
-			<form action="corporate">
-				<label for="corporate">The number of occupants per floor</label><br>
-				<input type="text" id="maximum-occupancy" name="maximum-occupancy" value=""><br>
-				<label for="corporate">The number of floors</label><br>
-				<input type="text" id="number-of-floors" name="number-of-floors" value=""><br>
-				<label for="corporate">The number of basements</label><br>
-				<input type="text" id="number-of-basements" name="number-of-basements" value=""><br>
-				<label for="corporate">The number of parking spots</label><br>
-				<input type="text" id="number-of-parking-spots" name="number-of-parking-spots" value=""><br>
-				<label for="corporate">The number of corporations</label><br>
-				<input type="text" id="number-of-corporations" name="number-of-corporations" value=""><br>
-				<input type="submit" value="Submit">
-  				<input type="reset">
-			</form>
-			<form action="hybrid">
-				<label for="hybrid">The number of distinct businesses</label><br>
-				<input type="text" id="number-of-companies" name="number-of-companies" value=""><br>
-				<label for="hybrid">The number of floors</label><br>
-				<input type="text" id="number-of-floors" name="number-of-floors" value=""><br>
-				<label for="hybrid">The number of basements</label><br>
-				<input type="text" id="number-of-basements" name="number-of-basements" value=""><br>
-				<label for="hybrid">The number of parking spots</label><br>
-				<input type="text" id="number-of-parking-spots" name="number-of-parking-spots" value=""><br>
-				<label for="hybrid">The number of occupants per floor</label><br>
-				<input type="text" id="maximum-occupancy" name="maximum-occupancy" value=""><br>
-				<label for="hybrid">The number of hours of activity of the building</label><br>
-				<input type="text" id="business-hours" name="business-hours" value=""><br>
-				<input type="submit" value="Submit">
-  				<input type="reset">
-			</form>	
+			  <div id="result"></div>
+
+			<div id="number-of-appartments"></div>
+			  <label for="number-of-appartments"> N. of appartments in the building *</label>
+			  <input id="number-of-appartments" type="number" min="0" value="" placeholder="Number of Appartments" />
+
+				
+			  <div id="number-of-floors"></div>
+			  	<label for="number-of-floors">N. of floors in the building *</label>
+				<input id="number-of-floors" type="number" min="0" value="" placeholder="Number of Floors" />
+
+				
+			<div id="number-of-basements"></div>
+				<label for="number-of-basements">N. of basements in the building *</label>
+				<input id="number-of-basements" type="number" min="0" value="" placeholder="Number of Basements" />
+
+				
+				<div id="number-of-companies"></div>
+				<label for="number-of-comapnies">N. of businesses in the building *</label>
+				<input id="number-of-companies" type="number" min="0" value="" placeholder="Number of Businesses" />
+
+				
+				<div id="number-of-parking-spots"></div>
+				<label for="number-of-parking-spots">N. of parking spots in the building *</label>
+				<input id="number-of-parking-spots" type="number" min="0" value="" placeholder="Number of Parking Spots" />
+
+				
+				<div id="number-of-elevators"></div>
+				<label for="number-of-elevtors">N. of elevators in the building *</label>
+				<input id="number-of-elevators" type="number" min="0" value="" placeholder="Number of Elevators" />
+
+				
+				<div id="number-of-corporations"></div>
+				<label for="number-of-corporations">N. of tenant companies in the building *</label>
+				<input id="number-of-corporations" type="number" min="0" value="" placeholder="Number of Tenant Companies" />
 
 
+				<div id="maximum-occupancy"></div>
+				<label for="maximum-occupancy">Maximum number of occupants per floor *</label>
+				<input id="maximum-occupancy" type="number" min="0" value="" placeholder="Max People Capacity per Floor" />
 
-			</form>
+
+				<div id="business-hours"></div>
+				<label for="business-hours">N. of hours of activity of the building * </label>
+				<input id="business-hours" type="number" min="0" max="24" value="" placeholder="Hours of Activity of the Building" />
+
+			
+
+				<form>
+					<input type="radio" id="standard" name="product line" value="standard">
+					<label for="standard">Standard: The service returns $7565</label><br>
+					<input type="radio" id="premium" name="product line" value="premium">
+					<label for="premium">Premium: The service returns $12,345</label><br>
+					<input type="radio" id="excelium" name="product line" value="excelium">
+					<label for="other">Excelium: The service returns $15,400</label>
+				  </form>
+			  
+
+				<script src="quote.js"></script>
+
+			
 					
 			 
 
@@ -331,7 +333,6 @@
 
 		<script src="assets/js/scripts.js"></script>
 		
-		<!-- STYLESWITCHER - REMOVE -->
-		<script async src="demo_files/styleswitcher/styleswitcher.js"></script>
+		
 	</body>
 </html>
