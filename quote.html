@@ -177,7 +177,8 @@
 
 			<!-- QUOTE FORM-->
 
-			<div style="float: left">Building Type: <select id="building" onChange="calc()">
+			<div style="float: left">Building Type: <select id="building" onChange="type()">
+				<option value="select">Select</option>
 				<option value="residential">Residential</option>
 				<option value="corporate">Corporate</option>
 				<option value="commercial">Commercial</option>
@@ -185,52 +186,50 @@
 			  </select>
 			  </div>
 
-			  <div id="result"></div>
-
 			<div id="number-of-appartments">
-			  <label for="number-of-appartments"> N. of appartments in the building *</label>
+			  <label for="appartmentsnumber"> N. of appartments in the building *</label>
 			  <input id="appartments" type="text" min="0" value="" placeholder="" />
 			</div>
 				
-			  <div id="number-of-floors"></div>
-			  	<label for="number-of-floors">N. of floors in the building *</label>
-				<input id="number-of-floors" type="number" min="0" value="" placeholder="Number of Floors" />
-
+			  <div id="number-of-floors">
+			  	<label for="floorsr">N. of floors in the building *</label>
+				<input id="floors" type="number" min="0" value="" placeholder="" />
+			</div>
 				
-			<div id="number-of-basements"></div>
-				<label for="number-of-basements">N. of basements in the building *</label>
-				<input id="number-of-basements" type="number" min="0" value="" placeholder="Number of Basements" />
-
+			<div id="number-of-basements">
+				<label for="basements">N. of basements in the building *</label>
+				<input id="basements" type="number" min="0" value="" placeholder="" />
+			</div>
 				
-				<div id="number-of-companies"></div>
-				<label for="number-of-comapnies">N. of businesses in the building *</label>
-				<input id="number-of-companies" type="number" min="0" value="" placeholder="Number of Businesses" />
-
+				<div id="number-of-companies">
+				<label for="companies">N. of businesses in the building *</label>
+				<input id="companies" type="number" min="0" value="" placeholder="" />
+			</div>
 				
-				<div id="number-of-parking-spots"></div>
-				<label for="number-of-parking-spots">N. of parking spots in the building *</label>
-				<input id="number-of-parking-spots" type="number" min="0" value="" placeholder="Number of Parking Spots" />
-
+				<div id="number-of-parking-spots">
+				<label for="parking">N. of parking spots in the building *</label>
+				<input id="parking-spots" type="number" min="0" value="" placeholder="" />
+			</div>
 				
-				<div id="number-of-elevators"></div>
-				<label for="number-of-elevtors">N. of elevators in the building *</label>
-				<input id="number-of-elevators" type="number" min="0" value="" placeholder="Number of Elevators" />
-
+				<div id="number-of-elevators">
+				<label for="elevators">N. of elevators in the building *</label>
+				<input id="elevators" type="number" min="0" value="" placeholder="" />
+			</div>
 				
-				<div id="number-of-corporations"></div>
-				<label for="number-of-corporations">N. of tenant companies in the building *</label>
-				<input id="number-of-corporations" type="number" min="0" value="" placeholder="Number of Tenant Companies" />
+				<div id="number-of-corporations">
+				<label for="corpor">N. of tenant companies in the building *</label>
+				<input id="corporations" type="number" min="0" value="" placeholder="" />
+			</div>
 
+				<div id="maximum-occupancy">
+				<label for="occupancy">Maximum number of occupants per floor *</label>
+				<input id="occupancy" type="number" min="0" value="" placeholder="" />
+			</div>
 
-				<div id="maximum-occupancy"></div>
-				<label for="maximum-occupancy">Maximum number of occupants per floor *</label>
-				<input id="maximum-occupancy" type="number" min="0" value="" placeholder="Max People Capacity per Floor" />
-
-
-				<div id="business-hours"></div>
-				<label for="business-hours">N. of hours of activity of the building * </label>
-				<input id="business-hours" type="number" min="0" max="24" value="" placeholder="Hours of Activity of the Building" />
-
+				<div id="business-hours">
+				<label for="hours">N. of hours of activity of the building * </label>
+				<input id="hours" type="number" min="0" max="24" value="" placeholder="" />
+			</div>
 			
 
 				<form>
@@ -241,9 +240,17 @@
 					<input type="radio" id="excelium" name="product line" value="excelium">
 					<label for="other">Excelium: The service returns $15,400</label>
 				  </form>
+
+				
+
+				  <div id="result">
+					  <input type="submit" value="submit" onclick="sumValues()">
+				  </div>
+
+				
 			  
 
-				<script src="quote.js"></script>
+				<script src="quote.js" defer></script>
 
 			
 					
