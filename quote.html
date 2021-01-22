@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>Rocket Elevators</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="quote.js"></script>
+	
+	<meta charset="utf-8" />
+		<title>Quote Form</title>
 		<meta name="description" content="" />
 		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
 
@@ -23,9 +31,16 @@
 		<!-- PAGE LEVEL SCRIPTS -->
 		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/color_scheme/red.css" rel="stylesheet" type="text/css" id="color_scheme" />
-	</head>
 
-	<!--
+    <style>
+        #resultRow{
+            font-size: 1.5em;
+        }
+    </style>
+    
+</head>
+<body>
+    <!--
 		AVAILABLE BODY CLASSES:
 		
 		smoothscroll 			= create a browser smooth scroll
@@ -76,7 +91,7 @@
 
 				Example Usage:  class="clearfix sticky header-sm transparent b-0"
 			-->
-			<div id="header" class="navbar-toggleable-md sticky transparent clearfix">
+			<div id="header" class="navbar-toggleable-md sticky clearfix">
 
 				<!-- TOP NAV -->
 				<header id="topNav">
@@ -89,7 +104,6 @@
 
 						<!-- Logo -->
 						<a class="logo float-left" href="index.html">
-							<img src="assets/R2.png" alt="" />
 							<img src="assets/R2.png" alt="" />
 						</a>
 
@@ -154,192 +168,518 @@
 
 
 			<!-- HOME -->
-			<section id="slider" class="h-650" style="background:url('demo_files/images/1200x800/18-min.jpg')">
-				<div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
-
+			<section id="home" class="h-450" style="background:url('assets/residentialpage.jpg')">
 				<div class="display-table">
 					<div class="display-table-cell vertical-align-middle">
 						
 						<div class="container text-center">
 							
-							<h1 class="m-0 fs-50 fw-300 wow fadeInUp" data-wow-delay="0.4s">Please Fill Quote Form</Form></h1>
-							<p class="lead font-lato fs-30 wow fadeInUp" data-wow-delay="0.7s">For an accurate estimate of your project.</p>
-							
-							
+							<div class="tp-caption font-roboto skewfromleft tp-resizeme"
+		data-x="50"
+		data-y="100" 
+		data-speed="500"
+		data-start="1500"
+		data-easing="Cubic.easeOut"
+		data-splitin="none"
+		data-splitout="none"
+		data-elementdelay="0.1"
+		data-endelementdelay="0.1"
+		data-endspeed="500"
+		style="z-index: 2; color:rgb(16, 4, 179); font-size:65px; line-height:85px; font-weight:bold; letter-spacing:0; text-shadow:none;">
+		Quote Form <br />
+		
+	</div>
+	<div class="tp-caption skewfromrightshort tp-resizeme"
+	data-x="50"
+	data-y="300" 
+	data-speed="500"
+	data-start="1000"
+	data-easing="easeInCirc"
+	data-splitin="none"
+	data-splitout="none"
+	data-elementdelay="0.1"
+	data-endelementdelay="0.1"
+	data-endspeed="500"
+	style="z-index: 3; font-size:24px; color:rgb(16, 4, 179); font-weight:300; text-shadow:none;">
+	Please fill the info down below to get an accurate estimate for your future project. <br />
+	
+</div>
 
-						</div>
+<div class="mt-30">
+	<a href="index.html" class="btn btn-3d btn-lg btn-teal"><i class="glyphicon glyphicon-th-large"></i>Go Back</a>
+	<span class="fs-17 hidden-xs-down">&nbsp; OR &nbsp;</span>
+	<a href="quote.html" class="btn btn-3d btn-lg btn-red"><i class="glyphicon glyphicon-user"></i>Get A Quote</a>
+</div>
 
+</div>
+
+</div>
+</div>
+</section>
+<!-- /HOME -->
+
+
+      <div class="container pt-5">
+        <form>
+            <div class="row">
+              <div class="col-12">
+                  <label for="buildingType"><h3>Building Type</h3></label>
+                <select class="form-control" id="buildingType" name="buildingType">
+                    <option selected disabled value="">Select a Building Type....</option>
+                    <option value="residential">Residential</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="corporate">Corporate</option>
+                    <option value="hybrid">Hybrid</option>
+                </select>
+              </div>
+            </div>
+            <div class="row my-4 hide" id="Residential">
+                <div class="col-12"><h4>Residential</h4></div>
+                <div class="col-12 col-md-6">
+                    <label for="apartmentCount">Number of Apartments</label>
+                    <input type="number" class="form-control" placeholder="Number of Apartments" name="apartmentCount" id="apartmentCount">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="floorCount">Number of Floors</label>
+                    <input type="number" class="form-control" placeholder="Number of Floors" name="floorCount" id="floorCount">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="basementCount">Number of Basements</label>
+                    <input type="number" class="form-control" placeholder="Number of Basements" name="basementCount" id="basementCount">
+                </div>
+            </div>
+
+            <div class="row my-4 hide" id="Commercial">
+                <div class="col-12"><h4>Commercial</h4></div>
+                <div class="col-12 col-md-6">
+                    <label for="businessCount">Number of Distinct Businesses</label>
+                    <input type="number" class="form-control" placeholder="Number of Distinct Businesses" name="businessCount" id="businessCount">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="floorCountCom">Number of Floors</label>
+                    <input type="number" class="form-control" placeholder="Number of Floors" name="floorCountCom" id="floorCountCom">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="basementCountCom">Number of Basements</label>
+                    <input type="number" class="form-control" placeholder="Number of Basements" name="basementCountCom" id="basementCountCom">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="parkingCount">Number of Parking Spaces</label>
+                    <input type="number" class="form-control" placeholder="Number of Parking Spaces" name="parkingCount" id="parkingCount">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="elevatorCount">Number of Elevator Cages</label>
+                    <input type="number" class="form-control" placeholder="Number of Elevator Cages" name="elevatorCount" id="elevatorCount">
+                </div>
+            </div>
+
+            <div class="row my-4 hide" id="Corporate">
+                <div class="col-12"><h4>Corporate</h4></div>
+                <div class="col-12 col-md-6">
+                    <label for="tenantCount">Number of Separate Tenant Companies</label>
+                    <input type="number" class="form-control" placeholder="Number of Separate Tenant Companies" name="tenantCount" id="tenantCount">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="floorCountCor">Number of Floors</label>
+                    <input type="number" class="form-control" placeholder="Number of Floors" name="floorCountCor" id="floorCountCor">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="basementCountCor">Number of Basements</label>
+                    <input type="number" class="form-control" placeholder="Number of Basements" name="basementCountCor" id="basementCountCor">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="parkingCountCor">Number of Parking Spaces</label>
+                    <input type="number" class="form-control" placeholder="Number of Parking Spaces" name="parkingCountCor" id="parkingCountCor">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="occupantsCount">Number of Maximum Occupants Per Floor</label>
+                    <input type="number" class="form-control" placeholder="Number of Maximum Occupants Per Floor" name="occupantsCount" id="occupantsCount">
+                </div>
+            </div>
+
+            <div class="row my-4 hide" id="Hybrid">
+                <div class="col-12"><h4>Hybrid</h4></div>
+                <div class="col-12 col-md-6">
+                    <label for="businessCountHy">Number of Distinct Businesses</label>
+                    <input type="number" class="form-control" placeholder="Number of Distinct Businesses" name="businessCountHy" id="businessCountHy">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="floorCountHy">Number of Floors</label>
+                    <input type="number" class="form-control" placeholder="Number of Floors" name="floorCountHy" id="floorCountHy">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="basementCountHy">Number of Basements</label>
+                    <input type="number" class="form-control" placeholder="Number of Basements" name="basementCountHy" id="basementCountHy">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="parkingCountHy">Number of Parking Spaces</label>
+                    <input type="number" class="form-control" placeholder="Number of Parking Spaces" name="parkingCountHy" id="parkingCountHy">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="occupantsCountHy">Number of Maximum Occupants Per Floor</label>
+                    <input type="number" class="form-control" placeholder="Number of Maximum Occupants Per Floor" name="occupantsCountHy" id="occupantsCountHy">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="activityCount">Number of Hours of Activity</label>
+                    <input type="number" min=1 max=24 class="form-control" placeholder="Number of Hours of Activity" name="activityCount" id="activityCount">
+                </div>
+            </div>
+
+            <div class="row my-4">
+                <div class="col-12">
+                    <button type="button" class="btn btn-success w-100" id="calculate">Calculate</button>
+                </div>
+            </div>
+
+            <div class="row my-4 hide" id="elevCountRow">
+                <div class="col-12"><hr></div>
+                <div class="col-12"><h4>Recommended Number of Elevators</h4></div>
+                <div class="col-12">
+                    <input type="number" class="form-control" readonly placeholder="Recommended Number of Elevators" name="elevCount" id="elevCount">
+                </div>
+            </div>
+
+            <div class="row my-4 hide" id="productLine">
+                <div class="col-12"><hr></div>
+                <div class="col-12"><h4>Select a Product Line</h4></div>
+                <div class="col-12 col-md-4">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" checked value="" name="productLine" id="standard"> Standard
+                        </label>
+                      </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" value="" name="productLine" id="premium"> Premium
+                        </label>
+                      </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" value="" name="productLine" id="excelium"> Excelium
+                        </label>
+                      </div>
+                </div>
+            </div>
+            
+            <div class="row my-4 hide" id="resultRow">
+                <div class="col-12"><hr></div>
+                <div class="col-12"><h4>ESTIMATED COST</h4></div>
+                <div class="col-12">
+                    <table border="0">
+                        <tr>
+                            <td>Amount of Elevators:- </td>
+                            <td><b><span id="totalElev"></span></b></td>
+                        </tr>
+                        <tr>
+                            <td>Unit Price of Elevator:- </td>
+                            <td><b>$ <span id="unitPrice" class="money"></span></b></td>
+                        </tr>
+                        <tr>
+                            <td>Total Price of Elevators:- </td>
+                            <td><b>$ <span id="totalElevPrice" class="money"></span></b></td>
+                        </tr>
+                        <tr>
+                            <td>Installation Fees:- </td>
+                            <td><b>$ <span id="installFee" class="money"></span></b></td>
+                        </tr>
+                        <tr>
+                            <td>Final Price:- </td>
+                            <td><b>$ <span id="finalPrice" class="money"></span></b></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+          </form>
+      </div>
+
+      <script>
+          var cages=0;
+          var unitPrice=7565;
+          var installFee=0.1;
+          $(".hide").hide();
+          $("#buildingType").change(function(){
+              if($(this).val()=="residential")
+              {
+                  $(".hide").hide();
+                  $("#Residential").show();
+              }
+              else if($(this).val()=="commercial")
+              {
+                  $(".hide").hide();
+                  $("#Commercial").show();
+              }
+              else if($(this).val()=="corporate")
+              {
+                  $(".hide").hide();
+                  $("#Corporate").show();
+              }
+              else if($(this).val()=="hybrid")
+              {
+                  $(".hide").hide();
+                  $("#Hybrid").show();
+              }
+          });
+
+          $("#calculate").click(function(){
+              if($("#buildingType").val()=="")
+              {
+                  alert("Please Select Building Type");
+              }
+              else
+              {
+                  if($("#buildingType").val()=="commercial")
+                  {
+                      if($("#businessCount").val()=="" || $("#floorCountCom").val()=="" || $("#basementCountCom").val()=="" || $("#parkingCount").val()=="" || $("#elevatorCount").val()=="")
+                      {
+                          alert("Please Fill the Blanks");
+                      }
+                      else
+                      {
+                        cages=$("#elevatorCount").val();
+                        $("#elevCount").val(cages);
+                        $("#elevCountRow").show();
+                        $("#totalElev").html(cages);
+                        $("#unitPrice").html((unitPrice).toFixed(2));
+                        $("#totalElevPrice").html((unitPrice*cages).toFixed(2));
+                        $("#installFee").html(((unitPrice*cages)*installFee).toFixed(2));
+                        $("#finalPrice").html(((unitPrice*cages)+((unitPrice*cages)*installFee)).toFixed(2));
+                        $('.money').simpleMoneyFormat();
+                        $("#resultRow").show();
+                        $("#productLine").show();
+                      }
+                  }
+                  else if($("#buildingType").val()=="residential")
+                  {
+                      if($("#apartmentCount").val()=="" || $("#floorCount").val()=="" || $("#basementCount").val()=="")
+                      {
+                        alert("Please Fill the Blanks");
+                      }
+                      else
+                      {
+                          var appart=$("#apartmentCount").val();
+                          var floors=$("#floorCount").val();
+                          var avgDoors=parseFloat(appart)/parseFloat(floors);
+                          var elShafts1=1;
+                          if(avgDoors>=6)
+                          {
+                            elShafts1=Math.round(avgDoors/6);
+                          }
+                          var elShafts2=1;
+                          if(floors>20)
+                          {
+                            elShafts2=Math.round(floors/6);
+                          }
+                          cages=parseInt(elShafts1)*parseInt(elShafts2);
+                          $("#elevCount").val(cages);
+                        $("#elevCountRow").show();
+                        $("#totalElev").html(cages);
+                        $("#unitPrice").html((unitPrice).toFixed(2));
+                        $("#totalElevPrice").html((unitPrice*cages).toFixed(2));
+                        $("#installFee").html(((unitPrice*cages)*installFee).toFixed(2));
+                        $("#finalPrice").html(((unitPrice*cages)+((unitPrice*cages)*installFee)).toFixed(2));
+                        $('.money').simpleMoneyFormat();
+                        $("#resultRow").show();
+                        $("#productLine").show();
+                      }
+                  }
+                  else if($("#buildingType").val()=="corporate")
+                  {
+                    if($("#tenantCount").val()=="" || $("#floorCountCor").val()=="" || $("#basementCountCor").val()=="" || $("#parkingCountCor").val()=="" || $("#occupantsCount").val()=="")
+                    {
+                        alert("Please Fill the Blanks");
+                    }
+                    else
+                    {
+                        var totOccupants=parseInt($("#occupantsCount").val())*parseInt($("#floorCountCor").val());
+                        var elevatorsCount=1;
+                        if(totOccupants>=1000)
+                        {
+                            elevatorsCount=Math.round(totOccupants/1000);
+                        }
+                        var totStories=parseInt($("#floorCountCor").val())+parseInt($("#basementCountCor").val());
+                        var elevatorCols=1;
+                        if(totStories>=20)
+                        {
+                            elevatorCols=Math.round(totStories/20);
+                        }
+                        var elevatorsPerCol=Math.round(elevatorsCount/elevatorCols);
+                        var totalElevators=elevatorsPerCol*elevatorCols;
+                        cages=totalElevators;
+                        $("#elevCount").val(totalElevators);
+                        $("#elevCountRow").show();
+                        $("#totalElev").html(cages);
+                        $("#unitPrice").html((unitPrice).toFixed(2));
+                        $("#totalElevPrice").html((unitPrice*cages).toFixed(2));
+                        $("#installFee").html(((unitPrice*cages)*installFee).toFixed(2));
+                        $("#finalPrice").html(((unitPrice*cages)+((unitPrice*cages)*installFee)).toFixed(2));
+                        $('.money').simpleMoneyFormat();
+                        $("#resultRow").show();
+                        $("#productLine").show();
+                    }
+                  }
+                  else if($("#buildingType").val()=="hybrid")
+                  {
+                      if($("#businessCountHy").val()=="" || $("#floorCountHy").val()=="" || $("#basementCountHy").val()=="" || $("#parkingCountHy").val()=="" || $("#occupantsCountHy").val()=="" || $("#activityCount").val()=="")
+                      {
+                        alert("Please Fill the Blanks");
+                      }
+                      else
+                      {
+                        var totOccupants=parseInt($("#occupantsCountHy").val())*parseInt($("#floorCountHy").val());
+                        var elevatorsCount=1;
+                        if(totOccupants>=1000)
+                        {
+                            elevatorsCount=Math.round(totOccupants/1000);
+                        }
+                        var totStories=parseInt($("#floorCountHy").val())+parseInt($("#basementCountHy").val());
+                        var elevatorCols=1;
+                        if(totStories>=20)
+                        {
+                            elevatorCols=Math.round(totStories/20);
+                        }
+                        var elevatorsPerCol=Math.round(elevatorsCount/elevatorCols);
+                        var totalElevators=elevatorsPerCol*elevatorCols;
+                        cages=totalElevators;
+                        $("#elevCount").val(totalElevators);
+                        $("#elevCountRow").show();
+                        $("#totalElev").html(cages);
+                        $("#unitPrice").html((unitPrice).toFixed(2));
+                        $("#totalElevPrice").html((unitPrice*cages).toFixed(2));
+                        $("#installFee").html(((unitPrice*cages)*installFee).toFixed(2));
+                         $("#finalPrice").html(((unitPrice*cages)+((unitPrice*cages)*installFee)).toFixed(2));
+                        $('.money').simpleMoneyFormat();
+                        $("#resultRow").show();
+                        $("#productLine").show();
+                      }
+                  }
+              }
+          });
+
+          $("#standard").click(function(){
+            unitPrice=7565;
+            installFee=0.1;
+            $("#totalElev").html(cages);
+            $("#unitPrice").html((unitPrice).toFixed(2));
+            $("#totalElevPrice").html((unitPrice*cages).toFixed(2));
+            $("#installFee").html(((unitPrice*cages)*installFee).toFixed(2));
+            $("#finalPrice").html(((unitPrice*cages)+((unitPrice*cages)*installFee)).toFixed(2));
+            $('.money').simpleMoneyFormat();
+
+          });
+          $("#premium").click(function(){
+            unitPrice=12345;
+            installFee=0.13;
+            $("#totalElev").html(cages);
+            $("#unitPrice").html((unitPrice).toFixed(2));
+            $("#totalElevPrice").html((unitPrice*cages).toFixed(2));
+            $("#installFee").html(((unitPrice*cages)*installFee).toFixed(2));
+            $("#finalPrice").html(((unitPrice*cages)+((unitPrice*cages)*installFee)).toFixed(2));
+            $('.money').simpleMoneyFormat();
+
+          });
+          $("#excelium").click(function(){
+            unitPrice=15400;
+            installFee=0.16;
+            $("#totalElev").html(cages);
+            $("#unitPrice").html((unitPrice).toFixed(2));
+            $("#totalElevPrice").html((unitPrice*cages).toFixed(2));
+            $("#installFee").html(((unitPrice*cages)*installFee).toFixed(2));
+            $("#finalPrice").html(((unitPrice*cages)+((unitPrice*cages)*installFee)).toFixed(2));
+            $('.money').simpleMoneyFormat();
+
+          });
+      </script>
+</body>
+
+<!-- FOOTER -->
+<footer id="footer">
+	<div class="container">
+
+
+		<div class="row">
+
+			<!-- col #1 -->
+			<div class="col-md-8">
+
+				<h3 class="letter-spacing-1">WHY US?</h3>
+
+				<!-- Small Description -->
+				<p>
+					We have the conviction that we create the most innovative and reliable products on the market. Contact us today for any questions you might have.
+				</p>
+				<h2>(418) 555-1234</h2>
+			</div>
+			<!-- /col #1 -->
+
+			<!-- col #2 -->
+			<div class="col-md-4">
+				<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
+
+				<!-- Newsletter Form -->
+				<p>Subscribe to Our Newsletter to get Important News & Offers</p>
+
+				<form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+						<input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
+						<span class="input-group-btn">
+							<button class="btn btn-success" type="submit">Subscribe</button>
+						</span>
 					</div>
-				</div>
-			</section>
-			<!-- /HOME -->
+				</form>
+				<!-- /Newsletter Form -->
 
 
-			<!-- QUOTE FORM-->
-
-			<div style="float: left">Building Type: <select id="building" onChange="type()">
-				<option value="select">Select</option>
-				<option value="residential">Residential</option>
-				<option value="corporate">Corporate</option>
-				<option value="commercial">Commercial</option>
-				<option value="hybrid">Hybrid</option>
-			  </select>
-			  </div>
-
-			<div id="number-of-appartments">
-			  <label for="appartmentsnumber"> N. of appartments in the building *</label>
-			  <input id="appartments" type="text" min="0" value="" placeholder="" />
 			</div>
-				
-			  <div id="number-of-floors">
-			  	<label for="floorsr">N. of floors in the building *</label>
-				<input id="floors" type="number" min="0" value="" placeholder="" />
-			</div>
-				
-			<div id="number-of-basements">
-				<label for="basements">N. of basements in the building *</label>
-				<input id="basements" type="number" min="0" value="" placeholder="" />
-			</div>
-				
-				<div id="number-of-companies">
-				<label for="companies">N. of businesses in the building *</label>
-				<input id="companies" type="number" min="0" value="" placeholder="" />
-			</div>
-				
-				<div id="number-of-parking-spots">
-				<label for="parking">N. of parking spots in the building *</label>
-				<input id="parking-spots" type="number" min="0" value="" placeholder="" />
-			</div>
-				
-				<div id="number-of-elevators">
-				<label for="elevators">N. of elevators in the building *</label>
-				<input id="elevators" type="number" min="0" value="" placeholder="" />
-			</div>
-				
-				<div id="number-of-corporations">
-				<label for="corpor">N. of tenant companies in the building *</label>
-				<input id="corporations" type="number" min="0" value="" placeholder="" />
-			</div>
-
-				<div id="maximum-occupancy">
-				<label for="occupancy">Maximum number of occupants per floor *</label>
-				<input id="occupancy" type="number" min="0" value="" placeholder="" />
-			</div>
-
-				<div id="business-hours">
-				<label for="hours">N. of hours of activity of the building * </label>
-				<input id="hours" type="number" min="0" max="24" value="" placeholder="" />
-			</div>
-			
-
-				<form>
-					<input type="radio" id="standard" name="product line" value="standard">
-					<label for="standard">Standard: The service returns $7565</label><br>
-					<input type="radio" id="premium" name="product line" value="premium">
-					<label for="premium">Premium: The service returns $12,345</label><br>
-					<input type="radio" id="excelium" name="product line" value="excelium">
-					<label for="other">Excelium: The service returns $15,400</label>
-				  </form>
-
-				
-
-				  <div id="result">
-					  <input type="submit" value="submit" onclick="sumValues()">
-				  </div>
-
-				
-			  
-
-				<script src="quote.js" defer></script>
-
-			
-					
-			 
-
-
-			<!-- FOOTER -->
-			<footer id="footer">
-				<div class="container">
-
-
-					<div class="row">
-
-						<!-- col #1 -->
-						<div class="col-md-8">
-
-							<h3 class="letter-spacing-1">WHY US?</h3>
-
-							<!-- Small Description -->
-							<p>
-								We have the conviction that we create the most innovative and reliable products on the market. Contact us today for any questions you might have.
-							</p>
-							<h2>(418) 555-1234</h2>
-						</div>
-						<!-- /col #1 -->
-
-						<!-- col #2 -->
-						<div class="col-md-4">
-							<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
-
-							<!-- Newsletter Form -->
-							<p>Subscribe to Our Newsletter to get Important News & Offers</p>
-
-							<form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-									<input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
-									<span class="input-group-btn">
-										<button class="btn btn-success" type="submit">Subscribe</button>
-									</span>
-								</div>
-							</form>
-							<!-- /Newsletter Form -->
-
-
-						</div>
-						<!-- /col #2 -->
-
-					</div>
-
-
-				</div>
-
-				<div class="copyright">
-					<div class="container">
-						<ul class="float-right m-0 list-inline mobile-block">
-							<li><a href="#">Terms &amp; Conditions</a></li>
-							<li>&bull;</li>
-							<li><a href="#">Privacy</a></li>
-						</ul>
-						&copy; All Rights Reserved, Company LTD
-					</div>
-				</div>
-
-			</footer>
-			<!-- /FOOTER -->
+			<!-- /col #2 -->
 
 		</div>
-		<!-- /wrapper -->
 
 
-		<!-- SCROLL TO TOP -->
-		<a href="#" id="toTop"></a>
+	</div>
+
+	<div class="copyright">
+		<div class="container">
+			<ul class="float-right m-0 list-inline mobile-block">
+				<li><a href="#">Terms &amp; Conditions</a></li>
+				<li>&bull;</li>
+				<li><a href="#">Privacy</a></li>
+			</ul>
+			&copy; All Rights Reserved, Company LTD
+		</div>
+	</div>
+</footer>
+<!-- /FOOTER -->
+
+</div>
+<!-- /wrapper -->
 
 
-		<!-- PRELOADER -->
-		<div id="preloader">
-			<div class="inner">
-				<span class="loader"></span>
-			</div>
-		</div><!-- /PRELOADER -->
+<!-- SCROLL TO TOP -->
+<a href="#" id="toTop"></a>
 
 
-		<!-- JAVASCRIPT FILES -->
-		<script>var plugin_path = 'assets/plugins/';</script>
-		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+<!-- PRELOADER -->
+<div id="preloader">
+<div class="inner">
+	<span class="loader"></span>
+</div>
+</div><!-- /PRELOADER -->
 
-		<script src="assets/js/scripts.js"></script>
-		
-		
-	</body>
+
+<!-- JAVASCRIPT FILES -->
+<script>var plugin_path = 'assets/plugins/';</script>
+<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+
+<script src="assets/js/scripts.js"></script>
+
+<!-- STYLESWITCHER - REMOVE -->
+<script async src="demo_files/styleswitcher/styleswitcher.js"></script>
+</body>
+</html>
 </html>

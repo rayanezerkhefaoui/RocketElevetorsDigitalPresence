@@ -1,117 +1,63 @@
-$("#number-of-appartments").hide();
-$("#maximum-occupancy").hide();
-$("#number-of-basements").hide();
-$("#number-of-elevators").hide();
-$("#business-hours").hide();
-$("#number-of-coporations").hide();
-$("#number-of-companies").hide();
-$("#number-of-parking-spots").hide();
-$("#number-of-floors").hide();
-
-var numAppart = document.getElementById("number-of-appartments");
-var maxOccup = document.getElementById("maximum-occupancy");
-var numBase = document.getElementById("number-of-basements");
-var numElev = document.getElementById("number-of-elevators");
-var busHours = document.getElementById("business-hours");
-var numCorpo = document.getElementById("number-of-coporations");
-var numComp = document.getElementById("number-of-companies");
-var numPark = document.getElementById("number-of-parking-spots");
-var numFloors = document.getElementById("number-of-floors");
-
-    $("#building").on('change', function type() {
-    var chooses = $("#building option:select").val();
-    console.log("select");
-
-    if(chooses == "default"){
-        console.log("select");
-            $("#number-of-appartments").hide();
-            $("#number-of-floors").hide();
-            $("#number-of-basements").hide();
-            $("#maximum-occupancy").hide();
-            $("#number-of-elevators").hide();
-            $("#business-hours").hide();
-            $("#number-of-coporations").hide();
-            $("#number-of-companies").hide();
-            $("#number-of-parking-spots").hide();
-
-        
-        };
-
-    if(chooses == "residential"){
-        console.log("residential");
-        $("#number-of-appartments").show();
-            $("#number-of-floors").show();
-            $("#number-of-basements").show();
-            $("#maximum-occupancy").hide();
-            $("#number-of-elevators").hide();
-            $("#hours").hide();
-            $("#number-of-coporations").hide();
-            $("#number-of-companies").hide();
-            $("#number-of-parking-spots").hide();
-    };
-
-    if(chooses == "corporate"){
-        $("#number-of-appartments").hide();
-            $("#number-of-floors").show();
-            $("#number-of-basements").show();
-            $("#maximum-occupancy").show();
-            $("#number-of-elevators").hide();
-            $("#hours").hide();
-            $("#number-of-coporations").show();
-            $("#number-of-companies").hide();
-            $("#number-of-parking-spots").show()
-
-    };
-
-    if(chooses == "commercial"){
-        $("#number-of-appartments").hide();
-            $("#number-of-floors").show();
-            $("#number-of-basements").show();
-            $("#maximum-occupancy").hide();
-            $("#number-of-elevators").show();
-            $("#hours").hide();
-            $("#number-of-coporations").hide();
-            $("#number-of-companies").show();
-            $("#number-of-parking-spots").show()
-    };
-
-    if(chooses == "hybrid"){
-        $("#number-of-appartments").hide();
-            $("#number-of-floors").show();
-            $("#number-of-basements").show();
-            $("#maximum-occupancy").show();
-            $("#number-of-elevators").hide();
-            $("#hours").hide();
-            $("#number-of-coporations").hide();
-            $("#number-of-companies").show();
-            $("#number-of-parking-spots").show()
-    };
-
-    }
-
-
-,function calc() {
-    var numberAppt = parseInt(document.querySelector("#number-of-appartments").value);
-    var numFloor = parseInt(document.querySelector("#number-of-floors").value);
-    var maxOccupancy = parseInt(document.querySelector("#maximum-occupancy").value);
-    var numBasement = parseInt(document.querySelector("#number-of-basements").value);
-    var numelevator = parseInt(document.querySelector("#number-of-elevators").value);
-    var businessHours = parseInt(document.querySelector("#business-hours").value);
-    var numCorp = parseInt(document.querySelector("#number-of-corporations").value);
-    var numcompanies = parseInt(document.querySelector("#number-of-companies").value);
-    var numparking = parseInt(document.querySelector("#number-of-parking-spots").value);
-    var operator = document.querySelector("#building").value;
-    var calculate;
-
-    
-        
-    }
-
-
-    ,document.querySelector("#result").innerHTML = calculate
-
-
-
-    
-  
-    )
+(function ($) {
+	$.fn.simpleMoneyFormat = function() {
+		this.each(function(index, el) {		
+			var elType = null; // input or other
+			var value = null;
+			var arr={};
+			var deci="";
+			// get value
+			if($(el).is('input') || $(el).is('textarea')){
+				value = $(el).val().replace(/,/g, '');
+				elType = 'input';
+			} else {
+				value = $(el).text().replace(/,/g, '');
+				elType = 'other';
+				arr=value.split(".");
+				if(arr.length>1)
+				{
+					value=arr[0];
+					deci="."+arr[1];
+				}
+			}
+			// if value changes
+			$(el).on('paste keyup', function(){
+				value = $(el).val().replace(/,/g, '');
+				formatElement(el, elType, value,deci); // format element
+			});
+			formatElement(el, elType, value,deci); // format element
+		});
+		function formatElement(el, elType, value,deci){
+			var result = '';
+			var valueArray = value.split('');
+			var resultArray = [];
+			var counter = 0;
+			var temp = '';
+			for (var i = valueArray.length - 1; i >= 0; i--) {
+				temp += valueArray[i];
+				counter++
+				if(counter == 3){
+					resultArray.push(temp);
+					counter = 0;
+					temp = '';
+				}
+			};
+			if(counter > 0){
+				resultArray.push(temp);				
+			}
+			for (var i = resultArray.length - 1; i >= 0; i--) {
+				var resTemp = resultArray[i].split('');
+				for (var j = resTemp.length - 1; j >= 0; j--) {
+					result += resTemp[j];
+				};
+				if(i > 0){
+					result += ','
+				}
+			};
+			if(elType == 'input'){
+				$(el).val(result+deci);
+			} else {
+				$(el).empty().text(result+deci);
+			}
+		}
+	};
+}(jQuery));
